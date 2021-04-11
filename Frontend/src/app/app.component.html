@@ -1,0 +1,55 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="navbar-nav ">
+    <a class="navbar-brand" href="#">
+      <img src="../assets/images/Cream and Green Circles Art & Design Logo.png" width="40" height="40" alt="" loading="lazy">
+    </a>
+  </ul>
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    
+    <ul class="navbar-nav ">
+      <li>
+       <a class="nav-link"  routerLink="/home" >HOME</a> <!-- product component -->
+      </li>
+    </ul>
+    <ul class="navbar-nav ">
+       <li>
+        <a class="nav-link"  routerLink="/login" *ngIf="!_auth.loggedIn()" routerLinkActive="active">LOGIN</a> <!-- login component -->
+        </li>
+        <li>
+          <a class="nav-link"  routerLink="/signup"  *ngIf="!_auth.loggedIn()" routerLinkActive="active">SIGN UP</a>
+          </li>
+        <li>
+        <a class="nav-link" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="loggedUser()">ADD PRODUCTS FOR SALE</a>
+      </li>
+      <li>
+        <a class="nav-link" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="loggedUserArticle()">ADD ARTICLES</a>
+      </li>
+      <li>
+        <a class="nav-link" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="loggedUserVideo()">ADD VIDEO TUTORIALS</a>
+      </li>
+      
+      
+      <li>
+        <a class="nav-link" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="logoutUser()">LOG OUT</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ">
+      <!-- <li>
+        <a class="nav-link"   routerLink="/signup"> SIGN UP</a>
+      </li> -->
+    </ul>
+    
+    
+  </div>
+
+</nav>
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>
